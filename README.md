@@ -1,35 +1,38 @@
 # Diabetes Risk Modeling
 
-Predict type 2 diabetes risk from clinical features with interpretable models.
+## Objective
+Predict type-2 diabetes risk from clinical features and explain the main risk drivers.
 
-## Problem
-Early risk prediction for type 2 diabetes using tabular clinical measurements.
+## Method
+- Tabular preprocessing and baseline classifiers.
+- Threshold analysis with ROC-AUC and PR-AUC.
+- Feature-importance analysis for interpretability.
 
-## Approach
-Data cleaning, baseline models, and interpretable feature analysis.
+## Repository Structure
+- `notebooks/` modeling and interpretation workflows.
+- `src/` reusable code modules.
+- `results/` metrics and plots.
+- `assets/` README figures.
+- `models/` saved models (optional).
+- `data/` local dataset directory (not versioned).
 
-## Highlights
-- Clinical data preprocessing and baselines
-- ROC-AUC/PR-AUC with threshold analysis
-- Feature importance for interpretability
+## Data Access
+Pima Indians Diabetes dataset.
 
-## Data
-Pima Indians diabetes dataset (`data/diabetes.csv`).
+## Run
+1. Put `diabetes.csv` under `data/`.
+2. Run notebooks in `notebooks/`.
+3. Export final metrics/plots to `results/`.
 
-## Project Structure
-- notebooks/ - Main workflow notebooks
-- data/ - Datasets (as noted above)
-- models/ - Model checkpoints (optional)
-- results/ - Metrics, plots, and outputs
-- assets/ - Figures for README
+## Result Artifacts
+- ROC and PR curves
+- Calibration/threshold plots
+- Feature-importance summary
 
-## How to Run
-- Open notebooks in `notebooks/`
-- Run all cells to reproduce metrics and plots
-
-## Status
-Notebook is ready for rerun; metrics can be recomputed.
-
-## Results Showcase
-- Recommended outputs in `results/`: ROC/PR curves, calibration plot, and feature-importance summary.
-- Add final figures to `assets/` and link them in this section after reruns.
+## Validated Baseline Run
+- `accuracy`: `0.7143`
+- `f1`: `0.5600`
+- `roc_auc`: `0.8230`
+- `pr_auc`: `0.6933`
+- metrics file: `results/metrics_diabetes_baseline.json`
+- model file: `results/artifacts/diabetes_logreg.joblib`
